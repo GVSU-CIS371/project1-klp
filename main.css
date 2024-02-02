@@ -1,7 +1,80 @@
-body,
+/*body,
 html {
-  /* height:100%; */
+   height:100%; 
 
   margin: 0px;
   padding: 0px;
+} 
+*/
+
+body,
+
+html {
+
+ /* height:100%; */
+ margin: 0px;
+ padding: 0px;
+
+}
+
+header {
+  display: grid;
+  grid-template-columns: [column-1] 40vw [column-2] 60vw;
+  grid-template-rows: 1fr;
+}
+header>h1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+header>nav {
+  grid-column-start: 2;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 25vw);
+  grid-gap: 10px;
+  grid-auto-flow: row;
+}
+
+main>.store-item {
+  display: grid;
+  height: 100vh; /* Use viewport height to cover the entire screen height */
+
+ width: 100vw; /* Use viewport width to cover the square */
+ grid-template-columns: 1fr;
+}
+
+img {
+  height: 10vh;
+  width: 10vw;
+}
+
+footer {
+  grid-area:footer;
+}
+
+
+#app {
+
+ display: grid;
+
+ gap: 5px;
+
+ height: 100vh; /* Use viewport height to cover the entire screen height */
+
+ width: 100vw; /* Use viewport width to cover the entire screen width */
+
+ grid-template-columns: repeat(4, 1fr);
+
+ grid-template-rows: 20px 1fr 20px ;
+
+ grid-template-areas: 
+
+  "header header header header"
+
+  "main main main main"
+
+  "footer footer footer footer";
+
 }

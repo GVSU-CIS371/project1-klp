@@ -12,6 +12,7 @@ header {
   display: grid;
   grid-template-rows: 1fr;
   grid-area: header;
+  padding-bottom: 30px;
   
 }
 header>h1 {
@@ -19,10 +20,10 @@ header>h1 {
   grid-column-end: 2;
 }
 header>nav {
-  grid-column-start: 2;
+  grid-column-start: 3;
 }
 
-ul{
+ul {
     display:flex;
     flex-direction:row;
     gap: 40px;
@@ -37,16 +38,25 @@ main {
   grid-area: main;
 }
 
-main>.store-item {
-  display: in-line block;
- grid-template-columns: 1fr;
-  width: 25vw;
-}
+  .store-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Align items horizontally in the center */
+    text-align: center; /* Center-align text within each span */
+    border: 2px solid #ddd; 
+    padding: 10px;
+    margin: 10px;
+  }
 
-img {
-  height: 10vh;
-  width: 10vw;
-}
+  .store-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .store-item span {
+    display: inline-block;
+    margin: 5px;
+  }
 
 footer {
   grid-area:footer;

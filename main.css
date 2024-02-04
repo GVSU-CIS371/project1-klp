@@ -1,11 +1,7 @@
 body,
-
 html {
-
- /* height:100%; */
- margin: 0px;
- padding: 0px;
-
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -13,76 +9,72 @@ header {
   grid-template-rows: 1fr;
   grid-area: header;
   padding-bottom: 30px;
-  
 }
+
 header>h1 {
+  font-family: monospace;
   grid-column-start: 1;
   grid-column-end: 2;
 }
+
 header>nav {
   grid-column-start: 3;
 }
 
 ul {
-    display:flex;
-    flex-direction:row;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-family: monospace;
+  font-size: 20px; /* Corrected the missing colon here */
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(4, 25vw);
+  grid-template-columns: repeat(4, 1fr);
   grid-row-start: 2;
   grid-gap: 10px;
   grid-auto-flow: row;
   grid-area: main;
 }
 
-  .store-item {
-    display: flex;
-    flex-direction: column;
-    align-items: start; /* Align items horizontally in the center */
-    text-align: center; /* Center-align text within each span */
-    border: 2px solid #ddd; 
-    padding: 10px;
-    margin: 10px;
-  }
-
-  .store-item img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .store-item span {
-    display: inline-block;
-    margin: 5px;
-  }
-
-footer {
-  grid-area:footer;
+.store-item {
+  display: inline-flexfelx;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 5px solid #ddd;
+  padding: 10px;
+  margin: 10px;
 }
 
+.store-item img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #ddd;
+  margin: auto;
+}
+
+.store-item p,
+.store-item span {
+  margin: 5px 0;
+}
+
+.store-item span {
+  margin: 20px;
+}
 
 #app {
-
- display: grid;
-
- gap: 5px;
-
- height: 100vh; /* Use viewport height to cover the entire screen height */
-
- width: 100vw; /* Use viewport width to cover the entire screen width */
-
- grid-template-columns: repeat(4, 1fr);
-
- grid-template-rows: 40px 1fr 40px ;
-
- grid-template-areas: 
-
-  "header header header header"
-
-  "main main main main"
-
-  "footer footer footer footer";
-
+  display: grid;
+  background-color: lightblue;
+  gap: 5px;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 40px 1fr 40px;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
 }
